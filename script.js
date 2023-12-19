@@ -7,6 +7,7 @@ var questionPosition = 0;
 // we want the user to make 2 choices that will add up over time
 var majority = 2;
 
+// questions that will be asked
 var q1a1 = document.getElementById("q1a1");
 var q1a2 = document.getElementById("q1a2");
 
@@ -16,6 +17,7 @@ var q2a2 = document.getElementById("q2a2");
 var q3a1 = document.getElementById("q3a1");
 var q3a2 = document.getElementById("q3a2");
 
+// on-click 
 q1a1.addEventListener("click", valorant);
 q1a2.addEventListener("click", minecraft);
 
@@ -26,6 +28,9 @@ q3a1.addEventListener("click", valorant);
 q3a2.addEventListener("click", minecraft);
 
 
+// function objects: if they press minecraft, we up the mc
+// and the question scores up by one 
+// results are only available if there are more than three answers 
 
 function minecraft() {
     minecraftScore += 1;
@@ -36,6 +41,11 @@ function minecraft() {
 }
 
 
+// function objects: if they press valorant, we up the mc
+// and the question scores up by one 
+// results are only available if there are more than three answers 
+// maybe we can abstract this later
+
 function valorant() {
     valorantScore += 1;
     questionPosition += 1;
@@ -44,7 +54,9 @@ function valorant() {
     }
 }
 
+
 var result = document.getElementById("result");
+
 
 function updateResult() {
   if (valorantScore >= majority) {
@@ -58,9 +70,12 @@ function updateResult() {
 
 }
 
+
+// restarting the quiz 
 var restart = document.getElementById("restart");
 restart.addEventListener("click", restartQuiz);
-                                  
+
+// reset all the numbers all to 0
 function restartQuiz() {
   result.innerHTML = "Your result is..."; 
   questionPosition = 0; 
