@@ -1,8 +1,10 @@
 /*Add your JavaScript here*/
 
+// initial scoring 
 var minecraftScore = 0;
 var valorantScore = 0;
 var questionPosition = 0;
+// we want the user to make 2 choices that will add up over time
 var majority = 2;
 
 var q1a1 = document.getElementById("q1a1");
@@ -53,9 +55,7 @@ function updateResult() {
   else { 
     result.innerHTML = "you like both games, don't you?"
   }
-    
 
-  
 }
 
 var restart = document.getElementById("restart");
